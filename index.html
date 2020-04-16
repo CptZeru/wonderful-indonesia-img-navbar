@@ -3,138 +3,231 @@
     <head>
         <meta charset="UTF-8">
         <title>Wonderful Indonesia</title>
+        <style>
+            body{
+                margin: 0;
+                padding:0;
+                color: white;
+                width: 100%;
+                min-height: 100%;
+                overflow: hidden;
+                -webkit-tap-highlight-color: rgba(255,255,255,0);
+            }
+            body section.slideshow{
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                visibility: hidden;
+                overflow: hidden;
+            }
+            body section.slideshow ul.navigation{
+                position: absolute;
+                display: block;
+                width: 640px;
+                height: 640px;
+                padding: 0;
+                margin: 0;
+                left: -230px;
+                top: 50%;
+                margin-top: -320px;
+                z-index: 10;
+            }
+            body section.slideshow ul.navigation li.navigation-item{
+                position: absolute;
+                display: inline-block;
+                overflow: hidden;
+                width: 120px;
+                height: 120px;
+                padding: 10px;
+                text-align: center;
+                border-radius: 50%;
+                transition: border 0.5s ease-in-out;
+            }
+            body section.slideshow ul.navigation li.navigation-item .rotate-holder{
+                position: fixed;
+                display: block;
+                width: 0;
+                height: 0;
+                left: -9999px;
+                top: -9999px;
+            }
+            body section.slideshow ul.navigation li.navigation-item .background-holder{
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                border-radius: 50%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out ;
+            }
+            body section.slideshow .detail{
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                top:0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 8;
+            }
+            body section.slideshow .detail .detail-item{
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                top:0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            }
+        </style>
     </head>
     <body>
         <section class="slideshow">
             <ul class="navigation">
                 <li class="navigation-item active">
                     <span class="rotate-holder">
-                        <span class="background-holder" style="background-image: url(/img-ses6/Jakarta.jpg);"></span>
+                        <span class="background-holder" style="background-image: url(img-ses6/Jakarta.jpg);"></span>
                     </span>
                 </li>
 
                 <li class="navigation-item">
                     <span class="rotate-holder">
-                        <span class="background-holder" style="background-image: url(/img-ses6/penjaringan.jpg);"></span>
+                        <span class="background-holder" style="background-image: url(img-ses6/penjaringan.jpg);"></span>
                     </span>
                 </li>
 
                 <li class="navigation-item active">
                     <span class="rotate-holder">
-                        <span class="background-holder" style="background-image: url(/img-ses6/Tanjung-Priuk.jpg);"></span>
+                        <span class="background-holder" style="background-image: url(img-ses6/Tanjung-Priuk.jpg);"></span>
                     </span>
                 </li>
 
                 <li class="navigation-item active">
                     <span class="rotate-holder">
-                        <span class="background-holder" style="background-image: url(/img-ses6/bromo.jpg);"></span>
+                        <span class="background-holder" style="background-image: url(img-ses6/bromo.jpg);"></span>
                     </span>
                 </li>
 
                 <li class="navigation-item active">
                     <span class="rotate-holder">
-                        <span class="background-holder" style="background-image: url(/img-ses6/bali.jpg);"></span>
+                        <span class="background-holder" style="background-image: url(img-ses6/bali.jpg);"></span>
                     </span>
                 </li>
 
                 <li class="navigation-item active">
                     <span class="rotate-holder">
-                        <span class="background-holder" style="background-image: url(/img-ses6/Girisubo.jpg);"></span>
+                        <span class="background-holder" style="background-image: url(img-ses6/Girisubo.jpg);"></span>
                     </span>
                 </li>
 
                 <li class="navigation-item active">
                     <span class="rotate-holder">
-                        <span class="background-holder" style="background-image: url(/img-ses6/kelingking.jpg);"></span>
+                        <span class="background-holder" style="background-image: url(img-ses6/kelingking.jpg);"></span>
                     </span>
                 </li>
 
                 <li class="navigation-item active">
                     <span class="rotate-holder">
-                        <span class="background-holder" style="background-image: url(/img-ses6/nusa-penida.jpg);"></span>
+                        <span class="background-holder" style="background-image: url(img-ses6/nusa-penida.jpg);"></span>
                     </span>
                 </li>
 
                 <li class="navigation-item active">
                     <span class="rotate-holder">
-                        <span class="background-holder" style="background-image: url(/img-ses6/wae-rebo.jpg);"></span>
+                        <span class="background-holder" style="background-image: url(img-ses6/wae-rebo.jpg);"></span>
                     </span>
                 </li>
             </ul>
+            <div class="detail">
+                <div class="detail-item active">
+                    <div class="headline">Jakarta</div>
+                    <div class="background" style="background-image: url(img-ses6/Jakarta.jpg); 
+                    height:100vh;"></div>
+                    <div class="background" style="background-image: url(img-ses6/Jakarta.jpg); 
+                    height:100vh;background-size: cover; background-position: center;"></div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="headline">Penjaringan</div>
+                    <div class="background" style="background-image: url(img-ses6/penjaringan.jpg); 
+                    height:100vh;"></div>
+                    <div class="background" style="background-image: url(img-ses6/penjaringan.jpg); 
+                    height:100vh;background-size: cover; background-position: center;"></div>
+                </div>
+    
+                <div class="detail-item active">
+                    <div class="headline">Tanjung Priuk</div>
+                    <div class="background" style="background-image: url(img-ses6/Tanjung-Priuk.jpg); 
+                    height:100vh;"></div>
+                    <div class="background" style="background-image: url(img-ses6/Tanjung-Priuk.jpg); 
+                    height:100vh;background-size: cover; background-position: center;"></div>
+                </div>
+    
+                <div class="detail-item active">
+                    <div class="headline">Bromo</div>
+                    <div class="background" style="background-image: url(img-ses6/bromo.jpg); 
+                    height:100vh;"></div>
+                    <div class="background" style="background-image: url(img-ses6/bromo.jpg); 
+                    height:100vh;background-size: cover; background-position: center;"></div>
+                </div>
+    
+                <div class="detail-item active">
+                    <div class="headline">Bali</div>
+                    <div class="background" style="background-image: url(img-ses6/bali.jpg); 
+                    height:100vh;"></div>
+                    <div class="background" style="background-image: url(img-ses6/bali.jpg); 
+                    height:100vh;background-size: cover; background-position: center;"></div>
+                </div>
+    
+                <div class="detail-item active">
+                    <div class="headline">Girisubo</div>
+                    <div class="background" style="background-image: url(img-ses6/Girisubo.jpg); 
+                    height:100vh;"></div>
+                    <div class="background" style="background-image: url(img-ses6/Girisubo.jpg); 
+                    height:100vh;background-size: cover; background-position: center;"></div>
+                </div>
+    
+                <div class="detail-item active">
+                    <div class="headline">kelingking Beach</div>
+                    <div class="background" style="background-image: url(img-ses6/kelingking.jpg); 
+                    height:100vh;"></div>
+                    <div class="background" style="background-image: url(img-ses6/kelingking.jpg); 
+                    height:100vh;background-size: cover; background-position: center;"></div>
+                </div>
+    
+                <div class="detail-item active">
+                    <div class="headline">Nusa Penida</div>
+                    <div class="background" style="background-image: url(img-ses6/nusa-penida.jpg); 
+                    height:100vh;"></div>
+                    <div class="background" style="background-image: url(img-ses6/nusa-penida.jpg); 
+                    height:100vh;background-size: cover; background-position: center;"></div>
+                </div>
+    
+                <div class="detail-item active">
+                    <div class="headline">Wae Rebo</div>
+                    <div class="background" style="background-image: url(img-ses6/wae-rebo.jpg); 
+                    height:100vh;"></div>
+                    <div class="background" style="background-image: url(img-ses6/wae-rebo.jpg); 
+                    height:100vh;background-size: cover; background-position: center;"></div>
+                </div>
+            </div>
         </section>
-
-        <div class="detail">
-            <div class="detail-item active">
-                <div class="headline">Jakarta</div>
-                <div class="background" style="background-image: url(/img-ses6/Jakarta.jpg); 
-                height:100vh;"></div>
-                <div class="background" style="background-image: url(/img-ses6/Jakarta.jpg); 
-                height:100vh;background-size: cover; background-position: center;"></div>
-            </div>
-            
-            <div class="detail-item">
-                <div class="headline">Penjaringan</div>
-                <div class="background" style="background-image: url(/img-ses6/penjaringan.jpg); 
-                height:100vh;"></div>
-                <div class="background" style="background-image: url(/img-ses6/penjaringan.jpg); 
-                height:100vh;background-size: cover; background-position: center;"></div>
-            </div>
-
-            <div class="detail-item active">
-                <div class="headline">Tanjung Priuk</div>
-                <div class="background" style="background-image: url(/img-ses6/Tanjung-Priuk.jpg); 
-                height:100vh;"></div>
-                <div class="background" style="background-image: url(/img-ses6/Tanjung-Priuk.jpg); 
-                height:100vh;background-size: cover; background-position: center;"></div>
-            </div>
-
-            <div class="detail-item active">
-                <div class="headline">Bromo</div>
-                <div class="background" style="background-image: url(/img-ses6/bromo.jpg); 
-                height:100vh;"></div>
-                <div class="background" style="background-image: url(/img-ses6/bromo.jpg); 
-                height:100vh;background-size: cover; background-position: center;"></div>
-            </div>
-
-            <div class="detail-item active">
-                <div class="headline">Bali</div>
-                <div class="background" style="background-image: url(/img-ses6/bali.jpg); 
-                height:100vh;"></div>
-                <div class="background" style="background-image: url(/img-ses6/bali.jpg); 
-                height:100vh;background-size: cover; background-position: center;"></div>
-            </div>
-
-            <div class="detail-item active">
-                <div class="headline">Girisubo</div>
-                <div class="background" style="background-image: url(/img-ses6/Girisubo.jpg); 
-                height:100vh;"></div>
-                <div class="background" style="background-image: url(/img-ses6/Girisubo.jpg); 
-                height:100vh;background-size: cover; background-position: center;"></div>
-            </div>
-
-            <div class="detail-item active">
-                <div class="headline">kelingking Beach</div>
-                <div class="background" style="background-image: url(/img-ses6/kelingking.jpg); 
-                height:100vh;"></div>
-                <div class="background" style="background-image: url(/img-ses6/kelingking.jpg); 
-                height:100vh;background-size: cover; background-position: center;"></div>
-            </div>
-
-            <div class="detail-item active">
-                <div class="headline">Nusa Penida</div>
-                <div class="background" style="background-image: url(/img-ses6/nusa-penida.jpg); 
-                height:100vh;"></div>
-                <div class="background" style="background-image: url(/img-ses6/nusa-penida.jpg); 
-                height:100vh;background-size: cover; background-position: center;"></div>
-            </div>
-
-            <div class="detail-item active">
-                <div class="headline">Wae Rebo</div>
-                <div class="background" style="background-image: url(/img-ses6/wae-rebo.jpg); 
-                height:100vh;"></div>
-                <div class="background" style="background-image: url(/img-ses6/wae-rebo.jpg); 
-                height:100vh;background-size: cover; background-position: center;"></div>
-            </div>
-        </div>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     </body>
 </html>
